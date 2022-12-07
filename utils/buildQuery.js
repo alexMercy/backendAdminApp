@@ -1,5 +1,5 @@
 
-const buildPostQuery = (table, item) => {
+function buildPostQuery  (table, item) {
     if (Object.keys(item).length === 0) return null;
 
     let sql = `INSERT INTO ${table} (${Object.keys(item) +''}) VALUES (`;
@@ -16,7 +16,7 @@ const buildPostQuery = (table, item) => {
 }
 
 
-const buildPatchQuery = (table, id, data) => {
+function buildPatchQuery (table, id, data)  {
     if (Object.keys(data).length === 0) return null;
     let sql = `UPDATE ${table} SET`;
     Object.entries(data).forEach(([key, value]) => {
